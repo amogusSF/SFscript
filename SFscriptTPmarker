@@ -9,7 +9,7 @@ end)
 for k, v in next, workspace:GetDescendants() do
     if v.ClassName == 'TouchTransmitter' and v:FindFirstAncestorOfClass('Model') and v:FindFirstAncestorOfClass('Model').Name:find('Marker') then
         
-        for i =  1, 4 do
+        for i =  1, 2 do
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame + Vector3.new(0, -1, 0)
             task.wait(0.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame + Vector3.new(0, 1, 0)

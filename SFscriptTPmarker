@@ -1,0 +1,21 @@
+workspace.Gravity = 0
+
+game:GetService('RunService').Stepped:Connect(function()
+    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
+       game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+    end
+end)
+
+for k, v in next, workspace:GetDescendants() do
+    if v.ClassName == 'TouchTransmitter' and v:FindFirstAncestorOfClass('Model') and v:FindFirstAncestorOfClass('Model').Name:find('Marker') then
+        
+        for i =  1, 10 do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame + Vector3.new(0, -1, 0)
+            task.wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame + Vector3.new(0, 1, 0)
+        end
+
+    end
+end
+
+workspace.Gravity = 196
